@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <!-- link para el código css-->
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <!-- link para los logos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Barra lateral que contendrá todas las opciones de navegación por el sistema -->
+    <div class="sidebar">
+        <div class="logo_contenido">
+            <div class="logoHotel">
+                <!-- Icono y nombre del hotel -->
+                <i class='bx bx-building'></i>
+                <div class="logo_nombre">Mi Hotel</div>
+            </div>
+            <!-- Boton para desplegar o plegar la barra lateral -->
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <!-- Lista de navegacion de las opciones del sistema-->
+        <!-- se usó logos <i></i> en cada item para que se vea más fachero, 
+        estos proporcionados por la pagina boxicons-->
+        <ul class="nav_list">
+            <li>
+                    <!-- item Buscar -->
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Buscar...">
+                    <span class="info_herramienta">Buscar</span>
+            </li>
+            <li>
+                <!-- item para la Dashboard -->
+                <a href="Dashboard.html"> <!-- Redireccionará al contenido inicial-->
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="nombre_link">Dashboard</span>
+                </a>
+                    <span class="info_herramienta">Dashboard</span>
+            </li>
+            <li>
+                <!-- item para la Gestión del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de gestión-->
+                    <i class='bx bx-slider'></i>
+                    <span class="nombre_link">Gestion</span>
+                </a>
+                    <span class="info_herramienta">Gestion</span>
+            </li>
+            <li>
+                <!-- item para la Tienda del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de la tienda-->
+                    <i class='bx bx-store'></i> 
+                    <span class="nombre_link">Tienda</span>
+                </a>
+                    <span class="info_herramienta">Tienda</span>
+            </li>
+            <li>
+                <!-- item para el Mantenimiento del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de mentenimiento-->
+                    <i class='bx bx-cog' ></i>
+                    <span class="nombre_link">Mantenimiento</span>
+                </a>
+                    <span class="info_herramienta">Mantenimiento</span>
+            </li>
+            <li>
+                <!-- item para los Reportes del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de reportes-->
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    <span class="nombre_link">Reportes</span>
+                </a>
+                    <span class="info_herramienta">Reportes</span>
+            </li>
+            <li> 
+                <!-- item para los Usuarios del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de usuarios-->
+                    <i class='bx bx-user'></i>
+                    <span class="nombre_link">Usuarios</span>
+                </a>
+                    <span class="info_herramienta">Usuarios</span>
+            </li>
+            <li>
+                <!-- item para los Clientes del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de clientes-->
+                    <i class='bx bx-group'></i>
+                    <span class="nombre_link">Clientes</span>
+                </a>
+                    <span class="info_herramienta">Clientes</span>
+            </li>
+        </ul>
+        <!-- Esta parte mostrará el usuario que haya iniciado sesión en el sistema-->
+        <div class="perfil_contenido">
+            <div class="perfil">
+                <div class="perfil_detalles">
+                    <!-- foto respectiva del usuario -->
+                    <img src="perfil.jpg" alt="">
+                    <div class="nombre_trabajo">
+                        <!-- Nombre y rol respectivos del usuario -->
+                        <div class="nombre">Erick Toala</div>
+                        <div class="rol">Administrador</div>
+                    </div>
+                </div>
+                <!-- icono para la opción de cerrar sesión-->
+                <i class='bx bx-log-out' id="salir"></i>
+            </div>   
+        </div>
+    </div>
+    <!-- contenido principal del sistema-->
+    <div class="inicio_contenido">
+        <div class="contenido_pagina">
+            <div class="tarjeta sombra-sm">
+                <div class="tarjeta_cuerpo p-3">
+                    <h6 class="tarjeta-title fuente_negrita texto-primario" style="font-size: 15px;">Resumen de la Habitación</h6>
+                    <div class="form-fila">
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Número:</label>
+                            <label class="form-texto">001</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Detalles:</label>
+                            <label class="form-texto">Detalles</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Categoria:</label>
+                            <label class="form-texto">Individual</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Piso:</label>
+                            <label class="form-texto">PRIMER</label>
+                        </div>
+                    </div>
+                    <div class="form-fila">
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Cliente:</label>
+                            <label class="form-texto mb-0">Erick Toala</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Nro. Documento:</label>
+                            <label class="form-texto mb-0">0803413111</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Correo:</label>
+                            <label class="form-texto mb-0">toalaercik56@gmail.com</label>
+                        </div>
+                        <div class="columna-md-3">
+                            <label class="form-texto fuente_negrita mb-0">Fecha Entrada:</label>
+                            <label class="form-texto mb-0">28/10/2022</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="tarjeta mt-3 sombra-sm">
+                <div class="tarjeta_encabezado tarjeta-title fuente_negrita texto-primario">
+                    Detalle venta
+                </div>
+                <div class="tarjeta_cuerpo card-body p-3">
+                    <div class="form-fila alinear-elementos-fin">
+                        <div class="columna-md-3">
+                            <label for="validationCustom01">Producto:</label>
+                            <select id="cboproducto" class="control_entrada"></select>
+                        </div>
+                        <div class="columna-md-2">
+                            <label for="validationCustom01">Precio:</label>
+                            <input type="text" class="control_entrada" id="txtprecio" disabled="disabled">
+                        </div>
+                        <div class="columna-md-2">
+                            <label for="validationCustom01">Cantidad</label>
+                            <input type="number" class="control_entrada" id="txtcantidad" value="1" min="1" max="10">
+                        </div>
+                        <div class="columna-md-2">
+                            <button id="btnagregarproducto" class="btn btn-success btn-block" type="button">Agregar</button>
+                        </div>
+                    </div>
+                    <hr />
+        
+                    <div class="fila">
+                        <div class="columna-12">
+                            <table class="tabla tabla_bordes tabla-sm" id="tbventa">
+                                <thead class="thead-oscuro">
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Precio Unitario</th>
+                                        <th scope="col">Sub Total</th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Agua</th>
+                                        <th>2</th>
+                                        <th>0.50</th>
+                                        <th>1.00</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <div class="fila justificar-contenido-fin">
+                        <div class="columna-3 alinear-auto-final">
+                            <table class="tabla tabla-sm borde-oscuro borde-derecho borde-superior borde-inferior">
+                                <tr>
+                                    <td class="fondo-oscuro texto_blanco">Total Pagar</td>
+                                    <td><label id="lbltotalpagar" class="m-0">0</label></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                    </div>
+                    <hr />
+                    <div class="fila justificar-contenido-fin">
+                        <div class="columna-4">
+                            <div class="grupo-entrada">
+                                <div class="grupo-entrada-antepuesto">
+                                    <label class="grupo-entrada-texto" for="inputGroupSelect01">Estado Venta</label>
+                                </div>
+                                <select class="seleccion-personalizada" id="cboestadoventa">
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="Cancelado">Cancelado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="columna-2">
+                            <button id="btnfinalizarventa" class="btn btn-primary btn-block" type="button">Finalizar Venta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- este script se usará para activar la opción de desplegar o plegar la barra lateral -->
+    <script>
+        //botón para el menú = #btn, barralateral = .sidebar, opción de buscar = bx-search
+        let btn=document.querySelector("#btn");
+        let sidebar=document.querySelector(".sidebar");
+        let buscarBtn=document.querySelector("bx-search");
+        //el botón btn activará esta función para desplegar o plegar la barra lateral con un click
+        btn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+        buscarBtn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+    </script>
+</body>
+</html>

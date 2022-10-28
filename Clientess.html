@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <!-- link para el código css-->
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <!-- link para los logos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Barra lateral que contendrá todas las opciones de navegación por el sistema -->
+    <div class="sidebar">
+        <div class="logo_contenido">
+            <div class="logoHotel">
+                <!-- Icono y nombre del hotel -->
+                <i class='bx bx-building'></i>
+                <div class="logo_nombre">Mi Hotel</div>
+            </div>
+            <!-- Boton para desplegar o plegar la barra lateral -->
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <!-- Lista de navegacion de las opciones del sistema-->
+        <!-- se usó logos <i></i> en cada item para que se vea más fachero, 
+        estos proporcionados por la pagina boxicons-->
+        <ul class="nav_list">
+            <li>
+                    <!-- item Buscar -->
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Buscar...">
+                    <span class="info_herramienta">Buscar</span>
+            </li>
+            <li>
+                <!-- item para la Dashboard -->
+                <a href="Dashboard.html"> <!-- Redireccionará al contenido inicial-->
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="nombre_link">Dashboard</span>
+                </a>
+                    <span class="info_herramienta">Dashboard</span>
+            </li>
+            <li>
+                <!-- item para la Gestión del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de gestión-->
+                    <i class='bx bx-slider'></i>
+                    <span class="nombre_link">Gestion</span>
+                </a>
+                    <span class="info_herramienta">Gestion</span>
+            </li>
+            <li>
+                <!-- item para la Tienda del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de la tienda-->
+                    <i class='bx bx-store'></i> 
+                    <span class="nombre_link">Tienda</span>
+                </a>
+                    <span class="info_herramienta">Tienda</span>
+            </li>
+            <li>
+                <!-- item para el Mantenimiento del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de mentenimiento-->
+                    <i class='bx bx-cog' ></i>
+                    <span class="nombre_link">Mantenimiento</span>
+                </a>
+                    <span class="info_herramienta">Mantenimiento</span>
+            </li>
+            <li>
+                <!-- item para los Reportes del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de reportes-->
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    <span class="nombre_link">Reportes</span>
+                </a>
+                    <span class="info_herramienta">Reportes</span>
+            </li>
+            <li> 
+                <!-- item para los Usuarios del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de usuarios-->
+                    <i class='bx bx-user'></i>
+                    <span class="nombre_link">Usuarios</span>
+                </a>
+                    <span class="info_herramienta">Usuarios</span>
+            </li>
+            <li>
+                <!-- item para los Clientes del hotel -->
+                <a href="#"> <!-- Redireccionará a la página de clientes-->
+                    <i class='bx bx-group'></i>
+                    <span class="nombre_link">Clientes</span>
+                </a>
+                    <span class="info_herramienta">Clientes</span>
+            </li>
+        </ul>
+        <!-- Esta parte mostrará el usuario que haya iniciado sesión en el sistema-->
+        <div class="perfil_contenido">
+            <div class="perfil">
+                <div class="perfil_detalles">
+                    <!-- foto respectiva del usuario -->
+                    <img src="perfil.jpg" alt="">
+                    <div class="nombre_trabajo">
+                        <!-- Nombre y rol respectivos del usuario -->
+                        <div class="nombre">Erick Toala</div>
+                        <div class="rol">Administrador</div>
+                    </div>
+                </div>
+                <!-- icono para la opción de cerrar sesión-->
+                <i class='bx bx-log-out' id="salir"></i>
+            </div>   
+        </div>
+    </div>
+    <!-- contenido principal del sistema-->
+    <div class="inicio_contenido">
+        <div class="contenido_pagina">
+            <div class="tarjeta sombra mb-4">
+                <div class="tarjeta_encabezado py-3 fondo_primario">
+                    <h6 class="margen0 fuente_negrita texto_blanco">Lista de Clientes</h6>
+                </div>
+                <div class="tarjeta_cuerpo">
+                    <div class="fila">
+                        <div class="columna_tipo12">
+                            <button class="cta btn btn-success btn-sm" type="button" onclick="abrirModal(null)">Crear Nuevo</button>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="fila">
+                        <div class="columna_tipo12">
+                            <div class="tabla_responsiva">
+                                <table class="tabla tabla_bordes" id="tabla" style="width:100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo Documento</th>
+                                            <th>Nro Documento</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+        
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight: 100;">Cédula</th>
+                                            <th style="font-weight: 100;">0803413111</th>
+                                            <th style="font-weight: 100;">Erick Alexander</th>
+                                            <th style="font-weight: 100;">Toala Intriago</th>
+                                            <th style="font-weight: 100;">toalaerick56@gmail.com</th>
+                                            <th style="font-weight: 100;">Soltero</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight: 100;">Cédula</th>
+                                            <th style="font-weight: 100;">0803413111</th>
+                                            <th style="font-weight: 100;">Erick Alexander</th>
+                                            <th style="font-weight: 100;">Toala Intriago</th>
+                                            <th style="font-weight: 100;">toalaerick56@gmail.com</th>
+                                            <th style="font-weight: 100;">Soltero</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight: 100;">Cédula</th>
+                                            <th style="font-weight: 100;">0803413111</th>
+                                            <th style="font-weight: 100;">Erick Alexander</th>
+                                            <th style="font-weight: 100;">Toala Intriago</th>
+                                            <th style="font-weight: 100;">toalaerick56@gmail.com</th>
+                                            <th style="font-weight: 100;">Soltero</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight: 100;">Cédula</th>
+                                            <th style="font-weight: 100;">0803413111</th>
+                                            <th style="font-weight: 100;">Erick Alexander</th>
+                                            <th style="font-weight: 100;">Toala Intriago</th>
+                                            <th style="font-weight: 100;">toalaerick56@gmail.com</th>
+                                            <th style="font-weight: 100;">Soltero</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Tipo Documento</th>
+                                            <th>Nro Documento</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        
+            <div class="modal-container">
+                <div class="modal modal-close">
+                    <div class="ventana_modal_contenido">
+                        <div class="ventana_modal_encabezado fondo_primario texto_blanco">
+                            <h5 class="ventana_modal_titulo" id="exampleModalLabel">Cliente</h5>
+                            <p class="close">X</p>
+                        </div>
+                        <div class="ventana_modal_cuerpo">
+                            <input id="txtid" type="hidden" value="0" />
+                            <form id="formNivel">
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="txtdescripcion">Tipo Documento:</label>
+                                            <select class="control_entrada" id="cbotipodocumento">
+                                                <option value="DNI">DNI</option>
+                                                <option value="PASAPORTE">PASAPORTE</option>
+                                                <option value="CARNET EXTRANJERIA">CARNET EXTRANJERIA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="txtdescripcion">Nro Documento:</label>
+                                            <input type="text" class="control_entrada required" id="txtdocumento" name="descripcion" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="txtdescripcion">Nombre:</label>
+                                            <input type="text" class="control_entrada required" id="txtnombre" name="descripcion" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="txtdescripcion">Apellido:</label>
+                                            <input type="text" class="control_entrada required" id="txtapellido" name="descripcion" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="txtdescripcion">Correo:</label>
+                                            <input type="text" class="control_entrada required" id="txtcorreo" name="descripcion" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fila">
+                                    <div class="columna_tipo12">
+                                        <div class="grupo_form">
+                                            <label for="cboEstado">Estado:</label>
+                                            <select id="cboEstado" class="control_entrada">
+                                                <option value="1">Activo</option>
+                                                <option value="0">No Activo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </form>
+        
+                        </div>
+                        <div class="ventana_modal_piePagina">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" onclick="Guardar()">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            
+        </div>
+    </div>
+    <!-- este script se usará para activar la opción de desplegar o plegar la barra lateral -->
+    <script src="main.js"></script>
+    <script>
+        //botón para el menú = #btn, barralateral = .sidebar, opción de buscar = bx-search
+        let btn=document.querySelector("#btn");
+        let sidebar=document.querySelector(".sidebar");
+        let buscarBtn=document.querySelector("bx-search");
+        //el botón btn activará esta función para desplegar o plegar la barra lateral con un click
+        btn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+        buscarBtn.onclick=function(){
+            sidebar.classList.toggle("active"); 
+        }
+    </script>
+</body>
+</html>
